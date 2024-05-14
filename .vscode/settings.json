@@ -1,0 +1,232 @@
+{
+  "editor.tabCompletion": "on",
+  "diffEditor.codeLens": true,
+  "python.testing.unittestArgs": [
+    "-v",
+    "-s",
+    "./tests",
+    "-p",
+    "test_*.py",
+    "tests_*.py",
+    "*_test.py"
+  ],
+  "python.testing.pytestEnabled": false,
+  "python.testing.unittestEnabled": true,
+
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.black-formatter",
+    "editor.formatOnSave": true,
+    "editor.tabSize": 4,
+    "editor.insertSpaces": true,
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": "always"
+    }
+  },
+
+  "isort.args": ["--profile", "black"],
+  //   "[python]": {
+  //     "editor.defaultFormatter": "ms-python.autopep8",
+  //     "editor.formatOnSave": true
+  //   },
+  "extensions.experimental.affinity": {
+    "asvetliakov.vscode-neovim": 1
+  },
+  "remote.extensionkind": {
+    "github.copilot": ["ui"],
+    "github.copilot-chat": "ui"
+  },
+  // vscode 的vim配置
+  "vim.statusBarColorControl": true,
+  "vim.statusBarColors.normal": ["#8FBCBB", "#434C5E"],
+  "vim.statusBarColors.insert": "#BF616A",
+  "vim.statusBarColors.visual": "#B48EAD",
+  "vim.statusBarColors.visualline": "#B48EAD",
+  "vim.statusBarColors.visualblock": "#A3BE8C",
+  "vim.statusBarColors.replace": "#D08770",
+  "vim.statusBarColors.commandlineinprogress": "#8FBCBB",
+  // "vim.statusBarColors.searchinprogressmode": "#007ACC",
+  // "vim.statusBarColors.easymotionmode": "#007ACC",
+  // "vim.statusBarColors.easymotioninputmode": "#007ACC",
+  // "vim.statusBarColors.surroundinputmode": "#007ACC",
+  "vim.easymotion": true,
+  "vim.incsearch": true,
+  "vim.leader": "<space>",
+  "vim.useSystemClipboard": true,
+  "vim.useCtrlKeys": true,
+  "vim.hlsearch": true,
+  "vim.highlightedyank.enable": true,
+  "vim.foldfix": true,
+  "vim.normalModeKeyBindings": [],
+  "vim.normalModeKeyBindingsNonRecursive": [
+    // Go to start or end of line
+    {
+      "before": ["H"],
+      "after": ["^"]
+    },
+    {
+      "before": ["L"],
+      "after": ["$"]
+    },
+    // Jump to change
+    {
+      "before": ["[", "c"],
+      "commands": ["workbench.action.editor.previousChange"]
+    },
+    {
+      "before": ["]", "c"],
+      "commands": ["workbench.action.editor.nextChange"]
+    },
+    // Move cursor between problems
+    {
+      "before": ["[", "d"],
+      "commands": ["editor.action.marker.prev"]
+    },
+    {
+      "before": ["]", "d"],
+      "commands": ["editor.action.marker.next"]
+    },
+    // Code actions
+    {
+      "before": ["<leader>", "s", "a"],
+      "commands": ["editor.action.sourceAction"]
+    },
+    // Quick fix
+    {
+      "before": ["<leader>", "q", "f"],
+      "commands": ["editor.action.quickFix"]
+    },
+    // 重用名变量
+    {
+      "before": ["<leader>", "r", "n"],
+      "commands": ["editor.action.rename"]
+    },
+    // Format 格式化当前文件
+    {
+      "before": ["<leader>", "f", "m"],
+      "commands": ["editor.action.formatDocument"]
+    },
+    // Find References
+    {
+      "before": ["g", "r"],
+      "commands": ["editor.action.goToReferences"]
+    },
+    // 新建文件夹,在编辑器的区域
+    {
+      "before": ["<Leader>", "n", "d"],
+      "commands": ["explorer.newFolder"]
+    },
+    // 新建文件,新建文件的位置取决于,文件资源管理器所在的位置
+    {
+      "before": ["<Leader>", "n", "f"],
+      "commands": ["explorer.newFile"]
+    },
+    // 打开文件资源管理器,光标会聚焦到文件资源管理器的窗口
+    {
+      "before": ["<leader>", "p", "o"],
+      "commands": ["workbench.view.explorer"]
+    },
+    // 也是打开文件资源管理器,但是光标会聚焦到已经打开的文件资源窗口
+    {
+      "before": ["<leader>", "p", "O"],
+      "commands": ["workbench.files.action.showActiveFileInExplorer"]
+    },
+    // quick open
+    {
+      "before": ["<leader>", "q", "o"],
+      "commands": ["workbench.action.quickOpen"]
+    },
+    // find char in files
+    {
+      "before": ["<leader>", "f", "f"],
+      "commands": ["workbench.action.findInFiles"]
+    },
+    // 进入到terminal
+    {
+      "before": ["<leader>", "t", "t"],
+      "commands": ["workbench.action.terminal.toggleTerminal"]
+    },
+    // 新建一个terminal终端
+    {
+      "before": ["<leader>", "t", "n"],
+      "commands": ["workbench.action.terminal.new"]
+    },
+    // 隐藏和打开terminal
+    {
+      "before": ["<leader>", "t", "h"],
+      "commands": ["workbench.action.togglePanel"]
+    },
+    {
+      "before": ["<leader>", "h", "e"],
+      "commands": ["workbench.action.maximizeEditor"]
+    },
+    // 上下左右的移动pandel
+    {
+      "before": ["<leader>", "h"],
+      "commands": ["workbench.action.navigateLeft"]
+    },
+    {
+      "before": ["<leader>", "j"],
+      "commands": ["workbench.action.navigateDown"]
+    },
+    {
+      "before": ["<leader>", "k"],
+      "commands": ["workbench.action.navigateUp"]
+    },
+    {
+      "before": ["<leader>", "l"],
+      "commands": ["workbench.action.navigateRight"]
+    },
+    // 移动下一个编辑器标签
+    {
+      "before": ["J"],
+      "commands": ["workbench.action.nextEditor"]
+    },
+    // 移动到上一个编辑器标签
+    {
+      "before": ["K"],
+      "commands": ["workbench.action.previousEditor"]
+    },
+    // 使用code run 来运行所有的代码
+    {
+      "before": ["<space>", "r", "r"],
+      "commands": [
+        // "extension.runScript"
+        // "autojspro.run"
+        "code-runner.run"
+      ]
+    },
+    {
+      "before": [">"],
+      "commands": ["editor.action.indentLines"]
+    },
+    {
+      "before": ["<"],
+      "commands": ["editor.action.outdentLines"]
+    },
+    {
+      "before": ["p"],
+      "after": ["p", "g", "v", "y"]
+    }
+  ],
+  "vim.insertModeKeyBindings": [
+    // 退出插入模式
+    {
+      "before": ["j", "k"],
+      "after": ["<Esc>"]
+    }
+  ],
+  "vim.visualModeKeyBindingsNonRecursive": [
+    // 移动到非空字符的行首
+    {
+      "before": ["H"],
+      "after": ["^"]
+    },
+    // 移动到非空字符的行尾
+    {
+      "before": ["L"],
+      "after": ["$"]
+    }
+  ],
+  "cody.autocomplete.advanced.provider": "experimental-ollama",
+  "cody.autocomplete.advanced.serverEndpoint": "http://pt001:11434"
+}
